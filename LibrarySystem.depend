@@ -1,0 +1,35 @@
+# depslib dependency file v1.0
+1557992911 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\add_book.cpp
+	"used.h"
+
+1557992955 e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\used.h
+	<iostream>
+	<cstring>
+	<stdlib.h>
+	<conio.h>
+	<iomanip>
+
+1557892948 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\borrow_book.cpp
+	"used.h"
+
+1557892866 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\info_book.cpp
+	"used.h"
+
+1557992366 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\main.cpp
+	"used.h"
+
+1557918813 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\menu_ui.cpp
+	"used.h"
+
+1557892897 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\modify_book.cpp
+	"used.h"
+
+1557892965 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\return_book.cpp
+	"used.h"
+
+1557930518 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\search_book.cpp
+	"used.h"
+
+1557896336 source:e:\软工\课程资料\大二下\程序设计课程设计\课程设计报告\librarysystem\identify_ui.cpp
+	"used.h"
+
