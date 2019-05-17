@@ -25,10 +25,18 @@ void Search_book()
     for(int i=0; i<count; i++)
     {
         cout.setf(ios::left);// set align left
-        cout << setw(8) << index[i]; //number
+        cout << setw(8) << index[i]+1; //Index + 1
         cout << setw(16) << books[index[i]].name;
         cout << setw(16) << books[index[i]].editor;
         if(i%2==0 && i!=0) cout << endl;
+        if(i%40 == 0 && i!=0)
+        {
+            cout << "输入任意字符继续(ESC退出)...";
+            char test = getch();
+            if(test == 27) return;
+            cout << endl << endl;
+            Showtable(2);
+        }
     }
 
 }

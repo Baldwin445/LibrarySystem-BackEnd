@@ -3,13 +3,14 @@
 //constants
 int numBook = MINNUM; //amount of Books
 int arraySize = INITIAL_SIZE; //size of Array
+//int code;//identity code
 struct book *books = NULL; //array of books
 
 
 int main()
 {
     char func=0;//function code
-    int code=0, flag=1;
+    int code, flag=1;
     books = (book*)malloc(sizeof(book)*INITIAL_SIZE);
     //code 0 for null, 1 for administrator, 2 for user
     //flag: situation of program
