@@ -37,7 +37,7 @@ int Menu_UI(int code)
     cout << "╚===============================================╝" << endl;
     //When account system upload, print account information
 
-    cout << "请输入功能序号：" << endl;
+    cout << "请输入功能序号：";
     while(1)
     {
         cin >> num;

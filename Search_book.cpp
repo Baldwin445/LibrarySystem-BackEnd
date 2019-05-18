@@ -1,9 +1,18 @@
 #include "used.h"
 
+extern int numBook;
+extern book *books;
+
 void Search_book()
 {
     char key[20];
     int count = 0, index[numBook];
+
+    if(numBook==0)
+    {
+        cout << "书库未存书籍信息，修改失败！" << endl;
+        return;
+    }
 
     cout << "输入关键字：";
     cin >> key;
@@ -14,7 +23,10 @@ void Search_book()
         return;
     }
     while(index[count]!=-1 && count<numBook-1)
-        index[++count] = CFindIndex(key,index[count-1]+1);
+    {
+        count++;
+        index[count] = CFindIndex(key,index[count-1]+1);
+    }
 
     //print the info
     if(count == 0)
@@ -38,7 +50,6 @@ void Search_book()
             Showtable(2);
         }
     }
-
 }
 
 int CFindIndex(char *key, int from)//Complete field search to Find Index
@@ -46,8 +57,8 @@ int CFindIndex(char *key, int from)//Complete field search to Find Index
     int i;
     for(i=from; i<numBook; i++)
     {
-        if(!strcmp(key,books[i].editor) || !strcmp(key,books[i].ISBN) || !strcmp(key,books[i].name) ||
-           !strcmp(key,books[i].publisher) || !strcmp(key,books[i].year))
+        if(!strcmp(key,books[i].editor) || atoi(key)==books[i].ISBN || !strcmp(key,books[i].name) ||
+           !strcmp(key,books[i].publisher) || atoi(key)==books[i].year)
             return i;
     }
     return -1;//if not found, return -1

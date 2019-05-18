@@ -16,7 +16,7 @@ int main()
     //flag: situation of program
 
     code = Identify_UI();
-    if(code!=1 || code!=2)
+    if(code!=1 && code!=2)
     {
         cout << "不存在此用户" << endl;
         exit(0);

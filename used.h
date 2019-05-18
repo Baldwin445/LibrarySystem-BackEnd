@@ -43,7 +43,7 @@ void Modify_book();
 void Return_book();
 void Search_book();
 void Showtable(int);
-int CFindIndex(char,int);
+int CFindIndex(char*,int);
 
 
 #endif // USED_H_INCLUDED

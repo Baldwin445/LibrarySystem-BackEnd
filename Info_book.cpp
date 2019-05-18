@@ -55,7 +55,7 @@ void Info_book(int code)
             cout << setw(8) << i+1; //number
             cout << setw(16) << books[i].name;
             cout << setw(16) << books[i].editor;
-            if(i%2==0 && i!=0) cout << endl;
+            cout << endl;
         }
 
 }

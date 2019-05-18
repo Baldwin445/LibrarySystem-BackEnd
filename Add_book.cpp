@@ -15,12 +15,13 @@ void Add_book()
         return;
     }
 
+    cout << "是否确认新建书籍信息(Y/N):" << endl;
+    cin >> str;
+    if(!strcmp(str,"N") || !strcmp(str,"n"))
+        return;
+
     while(1)
     {
-        cout << "是否确认新建书籍信息(Y/N):" << endl;
-        cin >> str;
-        if(!strcmp(str,"N") || !strcmp(str,"n"))
-            break;
         if(numBook >= arraySize)//no enough space to store
         {
             books = (book*)realloc(books,(arraySize+INCR_SIZE)*sizeof(books));
@@ -42,10 +43,12 @@ void Add_book()
         cout << "输入书籍数量";       cin >> books[numBook].own;
         numBook++;newbook++;
 
-        cout << endl << "成功连续新增" << newbook << "本书，现已有" << numBook << "本书。" << endl;
-
+        cout << "是否继续添加书籍信息(Y/N):";
+        cin >> str;
+        if(!strcmp(str,"N") || !strcmp(str,"n"))
+            return;
     }
 
-
+    cout << endl << "成功连续新增" << newbook << "本书，现已有" << numBook << "本书。" << endl;
 
 }
