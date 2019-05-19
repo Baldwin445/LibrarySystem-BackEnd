@@ -6,7 +6,7 @@ extern book *books;
 
 void Add_book()
 {
-    char str[4];
+    char str[4], yn;
     int newbook=0;//count new books
 
     if(numBook > MAXNUM)
@@ -15,10 +15,14 @@ void Add_book()
         return;
     }
 
-    cout << "是否确认新建书籍信息(Y/N):" << endl;
-    cin >> str;
-    if(!strcmp(str,"N") || !strcmp(str,"n"))
-        return;
+    cout << "是否确认新建书籍信息(Y/N):";
+    cin >> yn;
+    while(yn!='Y' && yn!='y' && yn!='N' && yn!='n')
+    {
+        cout << "请输入Y/N:";
+        cin >> yn;
+    }
+    if(yn=='N' || yn=='n') return;
 
     while(1)
     {
@@ -40,15 +44,21 @@ void Add_book()
         cout << "输入ISBN：";          cin >> books[numBook].ISBN;
         cout << "输入书名：";        cin >> books[numBook].name;
         cout << "输入价格：";        cin >> books[numBook].price;
-        cout << "输入书籍数量";       cin >> books[numBook].own;
+        cout << "输入书籍数量：";       cin >> books[numBook].own;
+        books[numBook].left = books[numBook].own;
         numBook++;newbook++;
 
         cout << "是否继续添加书籍信息(Y/N):";
-        cin >> str;
-        if(!strcmp(str,"N") || !strcmp(str,"n"))
-            return;
+        cin >> yn;
+        while(yn!='Y' && yn!='y' && yn!='N' && yn!='n')
+        {
+            cout << "请输入Y/N:";
+            cin >> yn;
+        }
+        if(yn=='N' || yn=='n') break;
     }
 
+    void write_data();
     cout << endl << "成功连续新增" << newbook << "本书，现已有" << numBook << "本书。" << endl;
 
 }

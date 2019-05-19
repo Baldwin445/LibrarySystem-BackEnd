@@ -19,6 +19,7 @@ int Menu_UI(int code)
         cout << "║          1. 添加书目                          ║" << endl;
         cout << "║          2. 修改书目                          ║" << endl;
         cout << "║          3. 查看书库信息                      ║" << endl;
+        cout << "║          4. 返回登录界面                      ║" << endl;
         cout << "║          0. 退出                              ║" << endl;
 
     }
@@ -29,6 +30,7 @@ int Menu_UI(int code)
         cout << "║          1. 借书                              ║" << endl;
         cout << "║          2. 还书                              ║" << endl;
         cout << "║          3. 查找书籍                          ║" << endl;
+        cout << "║          4. 返回登录界面                      ║" << endl;
         cout << "║          0. 退出                              ║" << endl;
 
     }
@@ -41,9 +43,9 @@ int Menu_UI(int code)
     while(1)
     {
         cin >> num;
-        if(code==1 && num>=0 && num<=3)
+        if(code==1 && num>=0 && num<=4)
             return num;//Administrator Functions
-        if(code==2 && num>=0 && num<=3)
+        if(code==2 && num>=0 && num<=4)
             return num;//User Function
         cout << "查找不到该功能，请重新输入：";
 

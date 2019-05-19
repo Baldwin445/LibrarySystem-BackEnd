@@ -41,14 +41,11 @@ void Modify_book()
         cout << setw(8) << books[needID].year;
         cout << setw(8) << books[needID].edition;
         cout << setw(16) << books[needID].ISBN;
-        cout << setw(8) << books[needID].own;
-        cout << setw(8) << books[needID].borrow;
-        cout << setw(8) << books[needID].left;
         cout << endl;
 
         cout << "是否为修改目标(Y/N)？";
         cin >> yn;
-        while(yn!='Y' || yn!='y' || yn!='N' || yn!='n')
+        while(yn!='Y' && yn!='y' && yn!='N' && yn!='n')
         {
             cout << "请输入Y/N";
             cin >> yn;

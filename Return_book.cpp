@@ -10,7 +10,7 @@ void Return_book()
 
     if(numBook==0)
     {
-        cout << "书库未存书籍信息，修改失败！" << endl;
+        cout << "书库未存书籍信息，归还失败！" << endl;
         return;
     }
 
@@ -19,16 +19,17 @@ void Return_book()
 
     //print the info
     Showtable(2);
-    for(index=-1,count=0;;)
+    index=CFindIndex(key,0);
+    if(index==-1 && count==0)
     {
-        index=CFindIndex(key,index+1);
-        if(index==-1 && count==0)
-        {
-            cout << "没有借阅记录！";
-            return;
-        }
-        else if(index==-1 && count !=0)
-            return;
+        cout << "没有借阅记录！";
+        return;
+    }
+    if(index==-1 && count !=0)
+        return;
+    for(count=0;index!=-1;)
+    {
+
         if(books[index].borrow>0)
         {
             count++;
@@ -37,7 +38,7 @@ void Return_book()
             cout << setw(16) << books[index].name;
             cout << setw(16) << books[index].editor << endl;
         }
-        if(count%20 == 0)
+        if(count%20 == 0 && count!=0)
         {
             cout << "输入任意字符继续(ESC退出)...";
             char test = getch();
@@ -75,9 +76,9 @@ void Return_book()
     cout << setw(16) << books[index].ISBN << endl;
     cout << "您要归还的是否为此书(Y/N)：";
     cin >> yn;
-    while(yn!='Y' || yn!='y' || yn!='N' || yn!='n')
+    while(yn!='Y' && yn!='y' && yn!='N' && yn!='n')
     {
-        cout << "请输入Y/N";
+        cout << "请输入Y/N:";
         cin >> yn;
     }
     if(yn=='n' || yn=='N')

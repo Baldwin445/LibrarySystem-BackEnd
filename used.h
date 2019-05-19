@@ -10,12 +10,12 @@
 //-----Structure-----//
 typedef struct book
 {
-    char editor[10];
-    char publisher[10];
+    char editor[20];
+    char publisher[20];
     int year;
     int edition;
-    long int ISBN;
-    char name[16];
+    long long int ISBN;
+    char name[30];
     int price;
     int own;
     int borrow;
@@ -29,6 +29,8 @@ typedef struct book
 #include <stdlib.h>
 #include <conio.h>
 #include <iomanip>
+#include <stdio.h>
+#include <fstream>
 
 using namespace std;
 
@@ -44,6 +46,8 @@ void Return_book();
 void Search_book();
 void Showtable(int);
 int CFindIndex(char*,int);
-
+void cmd_info();
+void write_data();
+void load_data();
 
 #endif // USED_H_INCLUDED

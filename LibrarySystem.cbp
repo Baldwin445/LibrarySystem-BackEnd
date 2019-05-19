@@ -40,6 +40,7 @@
 		<Unit filename="Modify_book.cpp" />
 		<Unit filename="Return_book.cpp" />
 		<Unit filename="Search_book.cpp" />
+		<Unit filename="Storage.cpp" />
 		<Unit filename="main.cpp" />
 		<Unit filename="used.h" />
 		<Extensions>

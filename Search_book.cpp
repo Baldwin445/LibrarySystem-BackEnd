@@ -6,11 +6,11 @@ extern book *books;
 void Search_book()
 {
     char key[20];
-    int count = 0, index[numBook];
+    int count = 0, index[numBook+5];
 
     if(numBook==0)
     {
-        cout << "书库未存书籍信息，修改失败！" << endl;
+        cout << "书库未存书籍信息，查找失败！" << endl;
         return;
     }
 
@@ -22,9 +22,8 @@ void Search_book()
         cout << "没有找到相关数据！" << endl;
         return;
     }
-    while(index[count]!=-1 && count<numBook-1)
+    while(index[count]!=-1 && ++count<=numBook)
     {
-        count++;
         index[count] = CFindIndex(key,index[count-1]+1);
     }
 
@@ -32,7 +31,7 @@ void Search_book()
     if(count == 0)
         cout << "没有找到相关数据！" << endl;
     else
-        cout << "一共找到" << count << "条数据：";
+        cout << "一共找到" << count << "条数据：" << endl;
     Showtable(2);
     for(int i=0; i<count; i++)
     {
@@ -40,7 +39,7 @@ void Search_book()
         cout << setw(8) << index[i]+1; //Index + 1
         cout << setw(16) << books[index[i]].name;
         cout << setw(16) << books[index[i]].editor;
-        if(i%2==0 && i!=0) cout << endl;
+        cout << endl;
         if(i%40 == 0 && i!=0)
         {
             cout << "输入任意字符继续(ESC退出)...";
