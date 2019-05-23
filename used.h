@@ -47,7 +47,7 @@ void Search_book();
 void Showtable(int);
 int CFindIndex(char*,int);
 void cmd_info();
-void write_data();
+void save_data();
 void load_data();
 
 #endif // USED_H_INCLUDED

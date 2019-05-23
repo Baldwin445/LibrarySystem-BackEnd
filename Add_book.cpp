@@ -58,7 +58,7 @@ void Add_book()
         if(yn=='N' || yn=='n') break;
     }
 
-    void write_data();
+    save_data();
     cout << endl << "成功连续新增" << newbook << "本书，现已有" << numBook << "本书。" << endl;
 
 }

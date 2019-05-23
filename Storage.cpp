@@ -5,7 +5,7 @@ extern int numBook;
 extern int arraySize;
 
 
-void write_data()
+void save_data()
 {
     FILE *fp;
     char fname[30];

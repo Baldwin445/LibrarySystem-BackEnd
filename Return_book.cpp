@@ -20,16 +20,13 @@ void Return_book()
     //print the info
     Showtable(2);
     index=CFindIndex(key,0);
-    if(index==-1 && count==0)
+    if(index==-1)
     {
-        cout << "没有借阅记录！";
+        cout << "没有搜索记录！";
         return;
     }
-    if(index==-1 && count !=0)
-        return;
     for(count=0;index!=-1;)
     {
-
         if(books[index].borrow>0)
         {
             count++;
@@ -46,16 +43,11 @@ void Return_book()
             cout << endl << endl;
             Showtable(2);
         }
+        index=CFindIndex(key,index+1);
     }
+    if(count==0) cout << "被借阅书籍中未查找到相关信息！" << endl;
 
     //confirm the info and send back
-    cout << "是否继续借阅(Y/N)？";
-    cin >> yn;
-    while(yn!='Y' || yn!='y' || yn!='N' || yn!='n')
-    {
-        cout << "请输入Y/N";
-        cin >> yn;
-    }
     if(yn=='N' || yn=='n') return;
 
     cout << "请输入归还书籍序号：";
@@ -66,7 +58,7 @@ void Return_book()
         cin >> index;
     }
     index--;
-    cout << "\t书名\t 主编\t 出版商\t 出版年份\t ISBN" << endl;
+    cout << "序号\t书名\t主编\t出版商\t出版年\tISBN" << endl;
     cout.setf(ios::left);// set align left
     cout << setw(8) << index+1; //number
     cout << setw(16) << books[index].name;

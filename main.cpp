@@ -16,7 +16,7 @@ int main()
     //code 0 for null, 1 for administrator, 2 for user
     //flag: situation of program
 
-    void load_data();
+    load_data();
 
     while(1)
     {
