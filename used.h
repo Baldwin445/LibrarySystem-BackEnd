@@ -16,7 +16,7 @@ typedef struct book
     int edition;
     long long int ISBN;
     char name[30];
-    int price;
+    float price;
     int own;
     int borrow;
     int left;

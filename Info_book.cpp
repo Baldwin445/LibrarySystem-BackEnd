@@ -76,7 +76,7 @@ void cmd_info()
 
     for(i=0;i<numBook;i++)
     {
-        cout << "书名：" << books[i].name << endl;
+        cout << "书名：《" << books[i].name << "》" << endl;
         cout << "主编：" << books[i].editor << endl;
         cout << "出版商：" << books[i].publisher << endl;
         cout << "出版年份：" << books[i].year << endl;

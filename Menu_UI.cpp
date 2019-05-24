@@ -42,7 +42,8 @@ int Menu_UI(int code)
     cout << "ÇëÊäÈë¹¦ÄÜĞòºÅ£º";
     while(1)
     {
-        cin >> num;
+        num = getch()-48;
+        cout << endl;
         if(code==1 && num>=0 && num<=4)
             return num;//Administrator Functions
         if(code==2 && num>=0 && num<=4)

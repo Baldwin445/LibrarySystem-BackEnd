@@ -44,7 +44,8 @@ int main()
                     break;
                 case 'C':
                     cout << "请选择显示方式：1.表格  2.列表：";
-                    cin >> choose;
+                    choose = getch()-48;
+                    cout << endl;
                     if(choose==2) Info_book(code+2);
                     else Info_book(code);
                     break;
