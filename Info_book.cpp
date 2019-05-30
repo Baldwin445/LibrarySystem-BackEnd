@@ -46,6 +46,7 @@ void Info_book(int code)
                 cout << setw(8) << i+1; //number
                 cout << setw(16) << books[i].name;
                 cout << setw(16) << books[i].editor;
+                cout << setw(16) << books[i].publisher;
                 cout << endl;
             }
         else
@@ -61,7 +62,7 @@ void Showtable(int code)
         cout << "序号\t书名\t主编\t出版商\t出版年\t版号\tISBN\t\t数量\t借出" << endl;
     else
         if(code == 2)
-        cout << "序号\t书名\t\t主编" << endl;
+        cout << "序号\t书名\t\t主编\t\t出版商" << endl;
 }
 
 //show info for CMD by every book

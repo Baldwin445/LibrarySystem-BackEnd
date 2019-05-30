@@ -39,6 +39,7 @@ void Search_book()
         cout << setw(8) << index[i]+1; //Index + 1
         cout << setw(16) << books[index[i]].name;
         cout << setw(16) << books[index[i]].editor;
+        cout << setw(16) << books[i].publisher;
         cout << endl;
         if(i%40 == 0 && i!=0)
         {
@@ -56,8 +57,8 @@ int CFindIndex(char *key, int from)//Complete field search to Find Index
     int i;
     for(i=from; i<numBook; i++)
     {
-        if(!strcmp(key,books[i].editor) || atoi(key)==books[i].ISBN || !strcmp(key,books[i].name) ||
-           !strcmp(key,books[i].publisher) || atoi(key)==books[i].year)
+        if(strstr(books[i].editor,key)!=NULL || atoi(key)==books[i].ISBN || strstr(books[i].name,key)!=NULL ||
+           strstr(books[i].publisher,key)!=NULL || atoi(key)==books[i].year)
             return i;
     }
     return -1;//if not found, return -1
