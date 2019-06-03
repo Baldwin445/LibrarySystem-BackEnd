@@ -21,15 +21,16 @@ void Modify_book()
         Search_book();
 
         cout << "请输入修改的书籍序号：";
-        cin >> needID; //needID = array index +1
-        while(needID<1 || needID>numBook)
+        cin >> needID;
+        needID = CFindIndex(needID);// find the real index in array
+        while(needID ==-1)
         {
             cout << "查无此书，请重新输入：";
             cin >> needID;
+            needID = CFindIndex(needID);
         }
 
-        //input it again
-        needID--;
+        //input info again
         while(flag)
         {
             cout << endl << endl;

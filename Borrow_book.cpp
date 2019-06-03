@@ -5,7 +5,7 @@ extern int numBook;
 
 void Borrow_book()
 {
-    int needID;
+    int needID, index;
     char yn;
 
     if(numBook==0)
@@ -19,18 +19,19 @@ void Borrow_book()
         Search_book();
 
         cout << endl << "请输入借阅的书籍序号：";
-        cin >> needID; //needID = array index +1
-        while(needID<1 || needID>numBook)
+        cin >> index;
+        needID = CFindIndex(index);                 // find the real index in array
+        while(needID == -1)
         {
             cout << "查无此书，请重新输入：";
-            cin >> needID;
+            cin >> index;
+            needID = CFindIndex(index);
         }
 
         //confirm the information and borrow
-        needID--;//needID-1=index of book in array
         cout << "序号\t书名\t\t主编\t\t出版商\t\t出版年\tISBN" << endl;
-        cout.setf(ios::left);// set align left
-        cout << setw(8) << needID+1; //number
+        cout.setf(ios::left);                       // set align left
+        cout << setw(8) << books[needID].order;     //number
         cout << setw(16) << books[needID].name;
         cout << setw(16) << books[needID].editor;
         cout << setw(16) << books[needID].publisher;

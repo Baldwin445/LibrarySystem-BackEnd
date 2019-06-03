@@ -24,6 +24,7 @@ void save_data()
 
     cout << endl << "存入文件中..." << endl;
     fwrite(books,sizeof(book)*numBook,1,fp);
+    SetFileAttributes(fname, FILE_ATTRIBUTE_HIDDEN|FILE_ATTRIBUTE_SYSTEM);
     fclose(fp);
     cout << numBook << "条记录已存入文件。" << endl;
 }

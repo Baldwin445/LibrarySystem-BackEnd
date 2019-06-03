@@ -31,7 +31,7 @@ void Return_book()
         {
             count++;
             cout.setf(ios::left);// set align left
-            cout << setw(8) << index+1; //Index + 1
+            cout << setw(8) << books[index].order; //Index + 1
             cout << setw(16) << books[index].name;
             cout << setw(16) << books[index].editor << endl;
         }
@@ -45,22 +45,24 @@ void Return_book()
         }
         index=CFindIndex(key,index+1);
     }
-    if(count==0) cout << "被借阅书籍中未查找到相关信息！" << endl;
+    if(count==0) cout << endl << "被借阅书籍中未查找到相关信息！" << endl;
 
     //confirm the info and send back
     if(yn=='N' || yn=='n') return;
 
     cout << "请输入归还书籍序号：";
     cin >> index;
-    while(index<1 || index>numBook)
+    index = CFindIndex(index);
+    while(index == -1)
     {
         cout << "查无此书，请重新输入：";
         cin >> index;
+        index = CFindIndex(index);
     }
-    index--;
-    cout << "序号\t书名\t主编\t出版商\t出版年\tISBN" << endl;
+
+    cout << "序号\t书名\t\t主编\t\t出版商\t\t出版年\tISBN" << endl;
     cout.setf(ios::left);// set align left
-    cout << setw(8) << index+1; //number
+    cout << setw(8) << books[index].order; //number
     cout << setw(16) << books[index].name;
     cout << setw(16) << books[index].editor;
     cout << setw(16) << books[index].publisher;

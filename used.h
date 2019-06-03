@@ -10,6 +10,7 @@
 //-----Structure-----//
 typedef struct book
 {
+    int order;
     char editor[20];
     char publisher[20];
     int year;
@@ -32,6 +33,7 @@ typedef struct book
 #include <stdio.h>
 #include <fstream>
 #include <string.h>
+#include <windows.h>
 
 using namespace std;
 
@@ -50,5 +52,6 @@ int CFindIndex(char*,int);
 void cmd_info();
 void save_data();
 void load_data();
+int CFindIndex(int);
 
 #endif // USED_H_INCLUDED
