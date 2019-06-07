@@ -19,7 +19,7 @@ void Info_book(int code)
         for(i=0; i<numBook; i++)
         {
             cout.setf(ios::left);// set align left
-            cout << setw(8) << i+1; //number
+            cout << setw(8) << books[i].order; //number
             cout << setw(8) << books[i].name;
             cout << setw(8) << books[i].editor;
             cout << setw(8) << books[i].publisher;
@@ -43,7 +43,7 @@ void Info_book(int code)
             for(i=0; i<numBook; i++)
             {
                 cout.setf(ios::left);// set align left
-                cout << setw(8) << i+1; //number
+                cout << setw(8) << books[i].order; //number
                 cout << setw(16) << books[i].name;
                 cout << setw(16) << books[i].editor;
                 cout << setw(16) << books[i].publisher;

@@ -5,7 +5,7 @@ extern int numBook;
 extern int arraySize;
 
 
-void save_data()
+int save_data()
 {
     FILE *fp;
     char fname[30];
@@ -13,31 +13,31 @@ void save_data()
     if(numBook == 0)
     {
         cout << "无记录存储！";
-        return;
+        return -1;
     }
-    strcpy(fname,"data");
+    strcpy(fname,"books.txt");
     if((fp=fopen(fname,"wb"))==NULL)
     {
         cout << "存入文件失败！" << endl;
-        return;
+        return -1;
     }
 
-    cout << endl << "存入文件中..." << endl;
     fwrite(books,sizeof(book)*numBook,1,fp);
-    SetFileAttributes(fname, FILE_ATTRIBUTE_HIDDEN|FILE_ATTRIBUTE_SYSTEM);
+    //SetFileAttributes(fname, FILE_ATTRIBUTE_HIDDEN|FILE_ATTRIBUTE_SYSTEM);
     fclose(fp);
-    cout << numBook << "条记录已存入文件。" << endl;
+    return 0;
 }
 
-void load_data()
+int load_data()
 {
     FILE *fp;
     char fname[30], str[5];
 
-    strcpy(fname,"data");
-    if ((fp=fopen(fname,"rb"))==NULL)
+    strcpy(fname,"books.txt");
+    if ((fp=fopen(fname,"ab+"))==NULL)
 	{
-		return;
+	    cout << "无法打开文件！" << endl;
+		return -1;
 	}
 
     while(!feof(fp))
@@ -48,7 +48,7 @@ void load_data()
 			books = (book*)realloc(books,(arraySize+INCR_SIZE)*sizeof(book));
 			if (books == NULL)
 			{
-				printf("memory failed!");
+				printf("Memory failed!");
 				exit(-1);
 			}
 			arraySize = arraySize+INCR_SIZE;
@@ -61,8 +61,8 @@ void load_data()
 
 	}
 
+
 	fclose(fp);
-
-
+    return 0;
 
 }

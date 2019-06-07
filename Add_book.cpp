@@ -35,20 +35,20 @@ void Add_book()
                 if(books[i].order == add.order)
                 {
                     cout << "已存在相同序号的书籍，存储失败！" << endl;
-                    continue;
+                    return;
                 }
             }
         }
         else
-            add.order=numBook+1;
+            add.order=findNoConflict(numBook+1);
 
         cout << "输入书名：";        cin >> add.name;
         for(int i=0;i<numBook;i++)
         {
-            if(strstr(books[i].name,add.name)!=NULL)
+            if(!strcmp(books[i].name,add.name))
             {
                 cout << "已存在相同书名的书籍，存储失败！" << endl;
-                continue;
+                return;
             }
         }
         cout << "输入ISBN：";          cin >> add.ISBN;
@@ -57,7 +57,7 @@ void Add_book()
             if(add.ISBN==books[i].ISBN)
             {
                 cout << "已存在相同ISBN的书籍，存储失败！" << endl;
-                continue;
+                return;
             }
         }
 
@@ -98,5 +98,17 @@ void Add_book()
     save_data();
     cout << endl << "成功连续新增" << newbook << "本书，现已有" << numBook << "本书。" << endl;
 
+}
+
+
+int findNoConflict(int num)
+{
+    for(int i=0; i<numBook; i++)
+        if(num==books[i].order)
+        {
+            num = findNoConflict(num+1);
+            break;
+        }
+    return num;
 }
 

@@ -33,7 +33,8 @@ void Return_book()
             cout.setf(ios::left);// set align left
             cout << setw(8) << books[index].order; //Index + 1
             cout << setw(16) << books[index].name;
-            cout << setw(16) << books[index].editor << endl;
+            cout << setw(16) << books[index].editor;
+            cout << setw(16) << books[index].publisher << endl;
         }
         if(count%20 == 0 && count!=0)
         {
@@ -82,6 +83,7 @@ void Return_book()
         {
             books[index].left++;
             books[index].borrow--;
+            save_data();
             cout << "¹é»¹³É¹¦£¡" << endl;
         }
         else

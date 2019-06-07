@@ -2,9 +2,13 @@
 
 //constants
 int numBook = MINNUM; //amount of Books
-int arraySize = INITIAL_SIZE; //size of Array
-//int code;//identity code
+int arraySize = INITIAL_SIZE; //size of Book Array
 struct book *books = NULL; //array of books
+
+int acctsn = MAXNUM+1;//identity code
+int numAcct = MINNUM; //amount of acct
+int acctSize = INITIAL_SIZE; //size of Acct Array
+struct account *acct = NULL;//array of acct
 
 
 
@@ -13,14 +17,18 @@ int main()
     char func=0;//function code
     int code, flag, choose;
     books = (book*)malloc(sizeof(book)*INITIAL_SIZE);
+    acct = (account*)malloc(sizeof(account)*INITIAL_SIZE);
     //code 0 for null, 1 for administrator, 2 for user
     //flag: situation of program
 
-    load_data();
+    if(loadAcct()) cout << "账号导入失败！" << endl;
+    if(load_data()) cout << "数据载入失败！" << endl;
 
     while(1)
     {
         code = Identify_UI();
+        if(acctsn == -1) code=1;//for special Admin account
+        if(acctsn == -2) code=2;//for special User account
         if(code!=1 && code!=2)
         {
             cout << "不存在此用户" << endl;
@@ -52,6 +60,12 @@ int main()
                 case 'D':
                     flag=0;
                     cout << endl << endl;
+                    break;
+                case 'I':
+                    addAdmin();
+                    break;
+                case 'E':
+                    showAcct();
                     break;
 
                 //User Functions

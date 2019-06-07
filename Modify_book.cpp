@@ -74,7 +74,7 @@ void Modify_book()
                 case 56:
                     cout << "输入书籍数量：";
                     cin >> change;
-                    while(change>books[needID].borrow || change<0)
+                    while(change<books[needID].borrow)
                     {
                         cout << "不在可输入范围！重新输入：";
                         cin >> change;

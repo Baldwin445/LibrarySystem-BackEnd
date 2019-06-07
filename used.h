@@ -7,6 +7,22 @@
 #define INITIAL_SIZE 10
 #define INCR_SIZE 5
 
+
+//-----Headers-----//
+#include <iostream>
+#include <cstring>
+#include <stdlib.h>
+#include <conio.h>
+#include <iomanip>
+#include <stdio.h>
+#include <fstream>
+#include <string.h>
+#include <windows.h>
+
+using namespace std;
+
+
+
 //-----Structure-----//
 typedef struct book
 {
@@ -23,35 +39,36 @@ typedef struct book
     int left;
 }book;
 
-
-//-----Headers-----//
-#include <iostream>
-#include <cstring>
-#include <stdlib.h>
-#include <conio.h>
-#include <iomanip>
-#include <stdio.h>
-#include <fstream>
-#include <string.h>
-#include <windows.h>
-
-using namespace std;
+typedef struct account
+{
+    char username[12];
+    char userpwd[19];
+    int id; //1 for administrator, 2 for user
+}account;
 
 
 //-----Functions-----//
-int Menu_UI(int);
+int Menu_UI(int idcode);
 int Identify_UI();
 void Add_book();
 void Borrow_book();
-void Info_book(int);
+void Info_book(int idcode);
 void Modify_book();
 void Return_book();
 void Search_book();
 void Showtable(int);
-int CFindIndex(char*,int);
+int CFindIndex(char *key,int from);
 void cmd_info();
-void save_data();
-void load_data();
-int CFindIndex(int);
+int save_data();
+int load_data();
+int CFindIndex(int keyword);
+int findNoConflict(int from);
+int findAcctSN(char *username, char* userpassword);
+void showAcct();
+int addUser();
+int addAdmin();
+int saveAcct();
+int loadAcct();
+
 
 #endif // USED_H_INCLUDED

@@ -51,6 +51,7 @@ void Borrow_book()
             {
                 books[needID].left--;
                 books[needID].borrow++;
+                save_data();
                 cout << "½èÔÄ³É¹¦£¡" << endl;
             }
             else

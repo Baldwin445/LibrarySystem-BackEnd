@@ -32,6 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
+		<Unit filename="Account.cpp" />
 		<Unit filename="Add_book.cpp" />
 		<Unit filename="Borrow_book.cpp" />
 		<Unit filename="Identify_UI.cpp" />
