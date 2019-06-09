@@ -59,15 +59,10 @@ int Identify_UI()
                         cout << user[i];
                         i++;
                     }
-                if(i==11)
-                {
-                    password[i] = '\0';
-                    cout << endl;
-                    break;
-                }
-
             }
-            while(i<12);
+            while(i<11);
+            user[i] = '\0';
+            if(i==11) cout << endl;
         }
 
 
@@ -98,14 +93,9 @@ int Identify_UI()
                         cout << endl;
                         break;
                     }
-            if(i==18)
-            {
-                password[i] = '\0';
-                cout << endl;
-                break;
-            }
-        }while(i<19);//hide the password
+        }while(i<18);//hide the password
 
+        password[i] = '\0';
         if(i==18) cout << endl << endl;
 
         acctsn = findAcctSN(user,password);

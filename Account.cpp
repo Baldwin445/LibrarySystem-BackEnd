@@ -21,7 +21,7 @@ int addUser()
     cout << "ÊäÈëÃÜÂë£º";
     //get the password
     i=0;
-    while(i<19)
+    while(i<18)
     {
         char ch = getch();
         if((ch>=48 && ch<=57) || (ch>=65 && ch<=90) || (ch>=97 && ch<=122))
@@ -46,13 +46,10 @@ int addUser()
                     cout << endl;
                     break;
                 }
-        if(i==18)
-        {
-            pwd[i] = '\0';
-            cout << endl;
-            break;
-        }
     }
+    pwd[i]='\0';
+    if(i==18) cout << endl;
+
     strcpy(acct[numAcct].userpwd, pwd);
     acct[numAcct].id = 2;
     numAcct++;
@@ -82,7 +79,7 @@ int addAdmin()
     cout << "ÊäÈëÃÜÂë£º";
     //get the password
     i=0;
-    while(i<19)
+    while(i<18)
     {
         char ch = getch();
         if((ch>=48 && ch<=57) || (ch>=65 && ch<=90) || (ch>=97 && ch<=122))
@@ -107,13 +104,10 @@ int addAdmin()
                     cout << endl;
                     break;
                 }
-        if(i==18)
-        {
-            pwd[i] = '\0';
-            cout << endl;
-            break;
-        }
     }
+    pwd[i]='\0';
+    if(i==18) cout << endl;
+
     strcpy(acct[numAcct].userpwd, pwd);
     acct[numAcct].id = 1;
     numAcct++;
