@@ -46,6 +46,17 @@ typedef struct account
     int id; //1 for administrator, 2 for user
 }account;
 
+typedef struct record
+{
+    char username[12];
+    char bookname[30];
+    int usersn; //Acct Array index
+    int bookid; //struct book order
+    char *time; //operation time
+    int op; //return (2) or borrow (1)
+
+}record;
+
 
 //-----Functions-----//
 int Menu_UI(int idcode);
