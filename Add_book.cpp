@@ -87,6 +87,7 @@ void Add_book()
         books[numBook].own = add.own;
         books[numBook].year = add.year;
         books[numBook].ISBN = add.ISBN;
+        books[numBook].borrow = 0;
         strcpy(books[numBook].name, add.name);
         strcpy(books[numBook].editor, add.editor);
         strcpy(books[numBook].publisher, add.publisher);

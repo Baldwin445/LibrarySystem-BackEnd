@@ -39,6 +39,7 @@
 		<Unit filename="Info_book.cpp" />
 		<Unit filename="Menu_UI.cpp" />
 		<Unit filename="Modify_book.cpp" />
+		<Unit filename="Record.cpp" />
 		<Unit filename="Return_book.cpp" />
 		<Unit filename="Search_book.cpp" />
 		<Unit filename="Storage.cpp" />
